@@ -1,6 +1,6 @@
-<form class="card" [formGroup]="form" (ngSubmit)="submit()">
-  <h2>Войти в панель администратора</h2>
-
+<form class="card login" [formGroup]="form" (ngSubmit)="submit()" xmlns:icon="http://www.w3.org/1999/xhtml">
+  <img class="admin" src="../../../assets/images/ad.jpg"  alt="Письма мастера дзен">
+  <h2>Erika Maer</h2>
   <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
     {{error}}
   </div>
@@ -13,8 +13,9 @@
     class="form-control"
     [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
   >
-    <label for="email">Email:</label>
-    <input id="email" type="email" formControlName="email">
+<!--    <label for="email">Email:</label>-->
+    <i class="pi pi-envelope"></i>
+    <input id="email" type="email" formControlName="email" placeholder="Email">
     <div
       *ngIf="form.get('email').touched && form.get('email').invalid"
       class="validation"
@@ -32,8 +33,9 @@
     class="form-control"
     [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
   >
-    <label for="password">Пароль:</label>
-    <input id="password" type="password" formControlName="password">
+<!--    <label for="password">Password:</label>-->
+    <i class="pi pi-lock"></i>
+    <input id="password" type="password" formControlName="password" placeholder="Password">
     <div
       class="validation"
       *ngIf="form.get('password').touched && form.get('password').invalid"
@@ -52,7 +54,7 @@
 
   <button
     type="submit"
-    class="btn btn-primary"
+    class="btn btn-login"
     [disabled]="form.invalid || submitted"
-  >Войти</button>
+  >Login</button>
 </form>

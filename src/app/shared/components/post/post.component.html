@@ -1,14 +1,18 @@
-<div class="card">
+<div class="card"
+     [routerLink]="['/post', post.id]">
   <div class="card-header">
-    <h2>{{post.title}}</h2>
-
-    <small>{{post.date | date: 'dd.MM.yyyy'}}</small>
+    <a>{{post.title}}</a>
+<!--    <small>{{post.date | date: 'dd.MM.yyyy'}}</small>-->
   </div>
+<!--  <hr>-->
   <div>
     <small>{{post.author}}</small>
   </div>
-  <button
-    [routerLink]="['/post', post.id]"
-    class="btn btn-dark"
-  >Открыть</button>
+<!--  <div>-->
+<!--    {{post.text}}-->
+<!--  </div>-->
+<!--  <button-->
+<!--    [routerLink]="['/post', post.id]"-->
+<!--    class="btn btn-dark"-->
+<!--  >Открыть</button>-->
 </div>

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import "~quill/dist/quill.core.css";
 @import "~quill/dist/quill.snow.css";
+@import "~primeicons/primeicons.css";
 
 :root {
-  --primary-color: #dc3545;
-  --dark-color: #333333;
+  --primary-color: #211e1e;
+  --dark-color: #696969;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -17,13 +18,15 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Caladea', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  min-height:100%;
+ // background: linear-gradient(to right, #c4ffffe4, #fcf4a4e4);
   color: #333;
 }
-
+//#f1da36
+//#f7d62fd7
 a {
   color: var(--primary-color);
   cursor: pointer;
@@ -39,14 +42,22 @@ ul {
 }
 
 img {
-  width: 100%;
+  //width: 100%;
 }
+  .admin{
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
 
 .container {
-  max-width: 1100px;
+  min-width: 600px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
+  min-height: 400px;
 }
 
 .text-primary {
@@ -70,9 +81,19 @@ img {
 }
 
 .card {
+  font-family: Savoy,helvetica,sans-serif;
   padding: 1rem;
-  border: #ccc 1px dotted;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   margin: 0.7rem 0;
+  cursor: pointer;
+  min-width: 300px;
+  border-radius: 25px;
+
+  &.login {
+    max-width: 400px;
+    margin-top: 100px;
+    box-shadow: 0 0 0px;
+  }
 
   &-header {
     display: flex;
@@ -96,7 +117,9 @@ img {
 .btn {
   display: inline-block;
   background: var(--light-color);
-  color: #333;
+  color: #fff;
+  text-shadow: 1px 1px 4px wheat;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -104,12 +127,19 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 25px;
 
   &:disabled {
     cursor: not-allowed;
-    background: var(--light-color);
-    color: #111;
+    display: block;
+    margin: 0 auto;
   }
+}
+
+.btn-login{
+  width: 100%;
+  background: #211e1edd;
+  color: #fff;
 }
 
 .btn-link {
@@ -152,7 +182,7 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--primary-color);
+  background: #211e1edd;
   color: #fff;
 }
 
@@ -215,6 +245,26 @@ img {
   color: #888;
   margin-bottom: .8rem;
 
+  input{
+    border-radius: 25px;
+    font-family: 'Caladea', sans-serif;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+  i.pi {
+    width: 26px;
+    height: 26px;
+    line-height: 35px;
+    text-align: center;
+    margin-right: -26px;
+    position: relative;
+    z-index: 1;
+    float: left;
+  }
+
+  i.pi + input {
+    padding-left: 30px;
+  }
+
   &.invalid {
     color: var(--primary-color);
     input {
@@ -272,7 +322,8 @@ table th {
 
   &.main {
     justify-content: center;
-    border-bottom: 1px solid var(--dark-color);
+    background-color: #211e1e;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
   }
 
   ul {
@@ -294,4 +345,19 @@ table th {
       color: var(--light-color);
     }
   }
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #211e1edd;
+  width: 100%;
+}
+.foot{
+  font-size: 13px;
+  text-shadow: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10em;
+  color: #FFFFFF;
 }
